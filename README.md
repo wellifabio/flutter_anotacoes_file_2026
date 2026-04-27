@@ -2,6 +2,8 @@
 
 App simples em flutter de um bloco de anotações para diversos assuntos, criado para estudos e aulas de programação Mobile.
 
+- Funcionalidade CRUD com arquivo de texto CSV
+
 ## Tecnologias
 - Flutter
 - VsCode
