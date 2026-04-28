@@ -55,11 +55,15 @@ class _HomeState extends State<Home> {
           title: Text('Adicionar Anotação'),
           content: TextField(
             controller: TextEditingController(text: anotacao),
+            style: TextStyle(color: AppColors.p1),
             onChanged: (value) {
               setState(() {
                 anotacao = value;
               });
             },
+            maxLines: null,
+            minLines: 5,
+            keyboardType: TextInputType.multiline,
             decoration: InputDecoration(hintText: "Digite sua anotação aqui"),
           ),
           actions: [
@@ -84,6 +88,34 @@ class _HomeState extends State<Home> {
                 salvarDados();
               },
               child: Text('Salvar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void modalDelete(int indice) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Excluir Anotação'),
+          content: Text('Tem certeza que deseja excluir esta anotação?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                setState(() {
+                  dados.removeAt(indice);
+                });
+                salvarDados();
+              },
+              child: Text('Sim'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text('Não'),
             ),
           ],
         );
@@ -120,10 +152,7 @@ class _HomeState extends State<Home> {
               subtitle: Text(dados[i].texto),
               trailing: GestureDetector(
                 onTap: () {
-                  setState(() {
-                    dados.removeAt(i);
-                  });
-                  salvarDados();
+                  modalDelete(i);
                 },
                 child: Container(
                   padding: EdgeInsets.all(8),

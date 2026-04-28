@@ -47,5 +47,51 @@ abstract class AppTheme {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
     ),
+    dialogTheme: DialogThemeData(
+      backgroundColor: AppColors.p4,
+      titleTextStyle: TextStyle(
+        fontFamily: 'PatrickHand',
+        color: AppColors.p1,
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
+      ),
+      contentTextStyle: TextStyle(
+        fontFamily: 'PatrickHand',
+        color: AppColors.p2,
+        fontSize: 16,
+      ),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: AppColors.p4,
+      hintStyle: TextStyle(
+        fontFamily: 'PatrickHand',
+        color: AppColors.p2,
+        fontSize: 16,
+      ),
+      labelStyle: TextStyle(
+        fontFamily: 'PatrickHand',
+        color: AppColors.p1,
+        fontSize: 16,
+      ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColors.p2, width: 2),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColors.p1, width: 2),
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        foregroundColor: AppColors.p1,
+        textStyle: TextStyle(
+          fontFamily: 'PatrickHand',
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
   );
 }
