@@ -40,4 +40,5 @@ Dê **fork** neste repositório, altere o armazenamento interno de **File** para
 
 
 ## Desafio 02
-Crie um app semelhante, porém de agenda de compromissos, utilize date
+Crie um app semelhante, porém de **Agenda de compromissos**, utilize **[datepicker](./datepicker.md)** para escolher a data e **timepicker** para escolher o horário, armazene os dados em arquivo CSV e exiba um calendário para mostrar os compromissos, utilize o pacote **[table_calendar](./calendar.md)** para exibir o calendário, marcando a data que possui compromissos em cor diferente [ao clicar na data, abrir um modal e exibir a lista de compromissos deste dia].
+- Crie um novo repositório para este desafio, criando Readme.md e explicando as tecnologias utilizadas, passos para testar e print das telas.
