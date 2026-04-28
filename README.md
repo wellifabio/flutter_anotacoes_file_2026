@@ -36,7 +36,7 @@ App simples em flutter de um bloco de anotações para diversos assuntos, criado
 
 ## Atividade
 ### Desafio 01
-Dê **fork** neste repositório, altere o armazenamento interno de **File** para **SQLite** e faça **commit** da alteração para o seu repositório, não é necessário fazer **pull request**
+Dê **fork** neste repositório, altere o armazenamento interno de **File** para **[SQLite](./sqlite.md)** e faça **commit** da alteração para o seu repositório, não é necessário fazer **pull request**
 
 
 ## Desafio 02
