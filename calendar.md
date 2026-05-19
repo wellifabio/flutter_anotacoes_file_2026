@@ -94,23 +94,47 @@ class MyApp extends StatelessWidget {
 
 Outro exemplo
 ```dart
-import 'package:flutter/material.dart';
+class CalendarioPage extends StatefulWidget {
+  const CalendarioPage({super.key});
 
-void main() {
-  runApp(MyApp());
+  @override
+  State<CalendarioPage> createState() => _CalendarioPageState();
 }
 
-class MyApp extends StatelessWidget {
+class _CalendarioPageState extends State<CalendarioPage> {
+  CalendarFormat _calendarFormat = CalendarFormat.month;
+  DateTime _focusedDay = DateTime.now();
+  DateTime? _selectedDay;
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text('Table Calendar Example')),
-        body: TableCalendar(
-          firstDay: DateTime.utc(2020, 1, 1),
-          lastDay: DateTime.utc(2030, 12, 31),
-          focusedDay: DateTime.now(),
-        ),
+    return Scaffold(
+      appBar: AppBar(title: const Text('Calendário em Português')),
+      body: TableCalendar(
+        locale: 'pt_BR', // <--- Isso define o idioma para português
+        firstDay: DateTime.utc(2010, 1, 1),
+        lastDay: DateTime.utc(2030, 12, 31),
+        focusedDay: _focusedDay,
+        calendarFormat: _calendarFormat,
+        selectedDayPredicate: (day) {
+          return isSameDay(_selectedDay, day);
+        },
+        onDaySelected: (selectedDay, focusedDay) {
+          setState(() {
+            _selectedDay = selectedDay;
+            _focusedDay = focusedDay; // atualiza o dia focado
+          });
+        },
+        onFormatChanged: (format) {
+          if (_calendarFormat != format) {
+            setState(() {
+              _calendarFormat = format;
+            });
+          }
+        },
+        onPageChanged: (focusedDay) {
+          _focusedDay = focusedDay;
+        },
       ),
     );
   }
