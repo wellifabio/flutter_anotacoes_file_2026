@@ -1,7 +1,15 @@
-# DatePicker
+  # DatePicker
 Usar um DatePicker no Flutter é simples, utilizando a função nativa showDatePicker. Ela exibe um calendário modal que permite ao usuário selecionar uma data e retorna essa data para o seu código. 
 - ![Imagem](./assets/info/datepicker.png)
 ## Passo a passo de como implementar.
+### 0. Adicionar a dependência
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+```
 ### 1. Implementação Básica
 Para abrir o calendário, você geralmente usa um ElevatedButton ou IconButton dentro de uma função assíncrona (async/await). 
 ```dart
