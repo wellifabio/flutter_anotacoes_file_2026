@@ -94,26 +94,27 @@ class MyApp extends StatelessWidget {
 
 Outro exemplo
 ```dart
-TableCalendar(
-  firstDay: DateTime.utc(2020, 1, 1),
-  lastDay: DateTime.utc(2030, 12, 31),
-  focusedDay: _focusedDay,
-  calendarFormat: _calendarFormat, // Ex: CalendarFormat.month
-  selectedDayPredicate: (day) {
-    return isSameDay(_selectedDay, day);
-  },
-  onDaySelected: (selectedDay, focusedDay) {
-    setState(() {
-      _selectedDay = selectedDay;
-      _focusedDay = focusedDay; // Atualiza o dia focado
-    });
-  },
-  onFormatChanged: (format) {
-    setState(() {
-      _calendarFormat = format;
-    });
-  },
-)
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Table Calendar Example')),
+        body: TableCalendar(
+          firstDay: DateTime.utc(2020, 1, 1),
+          lastDay: DateTime.utc(2030, 12, 31),
+          focusedDay: DateTime.now(),
+        ),
+      ),
+    );
+  }
+}
 ```
 - O TableCalendar oferece várias opções de personalização, como estilos, formatação de datas, e callbacks para eventos de seleção de dia e mudança de formato.
 - Ele é ideal para aplicativos que precisam exibir um calendário visual, como agendas, planejadores ou aplicativos de eventos.
